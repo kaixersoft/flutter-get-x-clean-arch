@@ -2,7 +2,7 @@ import 'package:clean_pattern/infrastructure/network/pretty_dio_logger.dart';
 import 'package:dio/dio.dart';
 
 class DioClient {
-  static const String baseUrl = 'https://reqres.in/api';
+  static const String baseUrl = 'https://jsonplaceholder.typicode.com';
 
   static Dio? _instance;
 

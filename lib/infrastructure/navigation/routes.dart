@@ -6,4 +6,5 @@ class Routes {
 
   static const HOME = '/home';
   static const USERS = '/users';
+  static const TODO = '/todo';
 }

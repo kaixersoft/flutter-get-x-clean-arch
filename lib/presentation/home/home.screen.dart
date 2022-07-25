@@ -36,6 +36,12 @@ class HomeScreen extends GetView<HomeController> {
                   onPressed: () => Get.toNamed(Routes.USERS),
                   child: const Text('Click to go to users page')),
               const SizedBox(height: 20),            
+              ElevatedButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.TODO);
+                  },
+                  child: const Text('Goto Todos')),
+
             ]),
         ),
       );
