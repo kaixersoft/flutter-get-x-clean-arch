@@ -4,7 +4,7 @@ class TodosResponse {
   String? title;
   bool? completed;
 
-  TodosResponse({this.userId, this.id, this.title, this.completed});
+  TodosResponse(int i, {this.userId, this.id, this.title, this.completed});
 
   TodosResponse.empty({
     this.userId = 0,
