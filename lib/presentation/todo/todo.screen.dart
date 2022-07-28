@@ -27,17 +27,17 @@ class TodoScreen extends GetView<TodoController> {
                 onPressed: () async => await controller.GetTodos(),
                 child: const Text('Click to load todos'),
               ),
-              // Obx(() => Expanded(
-              //       child: (controller.usersCount > 0)
-              //           ? ListView.builder(
-              //               itemCount: controller.usersList.length,
-              //               itemBuilder: (context, index) {
-              //                 final user = controller.usersList[index];
-              //                 return Center(child: Text(user.email.toString()));
-              //               },
-              //             )
-              //           : const SizedBox.shrink(),
-              //     )),
+              Obx(() => Expanded(
+                    child: (controller.todoLength > 0)
+                        ? ListView.builder(
+                            itemCount: controller.todoList.length,
+                            itemBuilder: (context, index) {
+                              final todo = controller.todoList[index];
+                              return Center(child: Text(todo.title.toString()));
+                            },
+                          )
+                        : const SizedBox.shrink(),
+                  )),
             ],
           ),
         )

@@ -10,7 +10,7 @@ class TodosResponse {
     this.userId = 0,
     this.id = 0,
     this.title = '',
-    this.completed = false,
+    this.completed = false
   });
 
   TodosResponse.fromJson(Map<String, dynamic> json) {

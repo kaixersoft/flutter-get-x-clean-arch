@@ -1,6 +1,6 @@
 
-import '../entities/response/todo_response.dart';
+import 'package:clean_pattern/domain/entities/response/todos_response.dart';
 
 abstract class TodoRepository {
-  Future<List<dynamic>> getTodos();
+  Future<List<TodosResponse>> getTodos();
 }

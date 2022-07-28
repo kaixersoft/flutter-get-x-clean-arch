@@ -1,11 +1,10 @@
 import 'package:clean_pattern/core/base/base_usecase.dart';
-import 'package:clean_pattern/domain/entities/response/todos_respose.backup.dart';
+import 'package:clean_pattern/domain/entities/response/todos_response.dart';
 import 'package:clean_pattern/domain/repositories/todo_repository.dart';
-
-import '../entities/response/todo_response.dart';
-
+import 'package:logger/logger.dart';
 class GetTodosUsecase extends BaseUseCase<GetTodosUseCaseResult, void> {
   final TodoRepository _todoRepository;
+  final _logger = Logger();
 
   GetTodosUsecase({
     required TodoRepository todoRepository
@@ -15,16 +14,17 @@ class GetTodosUsecase extends BaseUseCase<GetTodosUseCaseResult, void> {
   @override
   Future<GetTodosUseCaseResult> call(void params) async {
     try {
-      return GetTodosUseCaseResult(todos: await _todoRepository.getTodos());
+      var todoList = await _todoRepository.getTodos();
+      return GetTodosUseCaseResult(todos: todoList);
     } on Exception catch(e) {
-      return GetTodosUseCaseResult(todos: [TodoResponse.empty()], exception: e);
+      return GetTodosUseCaseResult(todos: [TodosResponse.empty()], exception: e);
     }  
   }
 
 }
 
 class GetTodosUseCaseResult extends UseCaseResult {
-  final List<dynamic> todos;
+  final List<TodosResponse> todos;
   final Exception? exception;
 
   GetTodosUseCaseResult({

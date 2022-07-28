@@ -1,7 +1,8 @@
 
 import 'package:clean_pattern/core/base/base_remote.dart';
 import 'package:clean_pattern/data/remote/todos_remote.dart';
-import 'package:dio/src/response.dart';
+import 'package:dio/dio.dart';
+
 
 class TodoRemoteImpl extends BaseRemote implements TodoRemote {
 
